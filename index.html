@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Resume Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,159 +16,182 @@
 }
 
 body{
-    background: linear-gradient(135deg,#667eea,#764ba2);
-    color:#fff;
-    min-height:100vh;
+    background:#f4f6f8;
+    height:100vh;
 }
 
-
-
-
-/* NAME CENTER */
-.center-name{
-    text-align:center;
-    margin-top:80px;
-    animation: fadeUp 1s ease;
-}
-
-.center-name h1{
-    font-size:38px;
-}
-
-.center-name p{
-    opacity:0.9;
-}
-
-/* BUTTON MENU */
-nav{
-    margin:40px auto;
-    width:260px;
+.container{
     display:flex;
-    flex-direction:column;
-    gap:15px;
-    animation: fadeUp 1.2s ease;
+    height:100vh;
 }
 
-nav button{
+/* LEFT PANEL */
+.sidebar{
+    width:280px;
+    background:#0f172a;
+    color:#fff;
+    padding:40px 25px;
+}
+
+.sidebar h1{
+    font-size:26px;
+    margin-bottom:5px;
+}
+
+.sidebar p{
+    font-size:14px;
+    opacity:0.8;
+    margin-bottom:30px;
+}
+
+.sidebar button{
+    width:100%;
     padding:14px;
+    margin-bottom:15px;
     border:none;
-    border-radius:30px;
-    font-size:16px;
-    font-weight:600;
+    border-radius:8px;
+    background:#1e293b;
+    color:#fff;
     cursor:pointer;
-    background: linear-gradient(45deg,#ff9a9e,#fad0c4);
-    transition:0.4s;
+    font-size:15px;
+    transition:0.3s;
 }
 
-nav button:hover{
-    transform:scale(1.08);
-    background: linear-gradient(45deg,#a1c4fd,#c2e9fb);
+.sidebar button:hover{
+    background:#38bdf8;
+    color:#000;
 }
 
-/* CONTENT BOX */
+/* RIGHT CONTENT */
+.content{
+    flex:1;
+    padding:60px;
+    overflow-y:auto;
+}
+
 .section{
     display:none;
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(10px);
-    padding:30px;
-    border-radius:20px;
-    width:90%;
-    max-width:700px;
-    margin:20px auto;
-    animation: fadeUp 0.6s ease;
+}
+
+.section.active{
+    display:block;
 }
 
 .section h2{
-    color:#ffeb3b;
-    margin-bottom:15px;
+    font-size:28px;
+    color:#0f172a;
+    margin-bottom:20px;
+    border-bottom:3px solid #38bdf8;
+    display:inline-block;
 }
 
-/* FOOTER BOTTOM */
+.section p, li{
+    font-size:16px;
+    margin:10px 0;
+    color:#333;
+    line-height:1.7;
+}
+
+ul{
+    margin-left:20px;
+}
+
+/* FOOTER */
 footer{
+    text-align:center;
+    padding:15px;
+    background:#0f172a;
+    color:#fff;
     position:fixed;
     bottom:0;
     width:100%;
-    text-align:center;
-    padding:12px;
-    background:#111;
     font-size:14px;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(40px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeDown{
-    from{opacity:0; transform:translateY(-40px);}
-    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
 
-<!-- NAME -->
-<div class="center-name">
-    <h1>Sandhya</h1>
-    <p>Software Developer | AI & ML Enthusiast</p>
+    <!-- LEFT MENU -->
+    <div class="sidebar">
+        <h1>Sandhya</h1>
+        <p>Software Developer Intern</p>
+
+        <button onclick="show('profile')">Profile</button>
+        <button onclick="show('internship')">Internship</button>
+        <button onclick="show('certificate')">Certificates</button>
+        <button onclick="show('education')">Education</button>
+        <button onclick="show('contact')">Contact</button>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="content">
+
+        <div id="profile" class="section active">
+            <h2>Profile</h2>
+            <p><strong>Name:</strong> Sandhya</p>
+            <p><strong>Role:</strong> Software Developer Intern</p>
+            <p><strong>Skills:</strong> HTML, CSS, JavaScript, Python, AI & ML</p>
+            <p>
+                Passionate software developer with strong knowledge in web
+                technologies and machine learning, seeking opportunities
+                to contribute to real-world projects.
+            </p>
+        </div>
+
+        <div id="internship" class="section">
+            <h2>Internship</h2>
+            <p><strong>Company:</strong> IMTDA Infotech Private Limited</p>
+            <p><strong>Domain:</strong> Software Development using AI & ML</p>
+            <ul>
+                <li>Worked on real-time development projects</li>
+                <li>Built ML models and web applications</li>
+                <li>Improved problem-solving and coding skills</li>
+            </ul>
+        </div>
+
+        <div id="certificate" class="section">
+            <h2>Certificates</h2>
+            <ul>
+                <li>AI & Machine Learning Internship Certificate</li>
+                <li>Python Programming</li>
+                <li>Web Development</li>
+                <li>Data Science Fundamentals</li>
+            </ul>
+        </div>
+
+        <div id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>BCA – Computer Application</strong></p>
+            <p>CGPA: 8.69</p>
+            <p>College: Indus Valley Degree College</p>
+            <p>2023 – 2026</p>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: sandhya02183@email.com</p>
+            <p>Phone: +91 86184 03429</p>
+            <p>GitHub: github.com/sandhya-9740</p>
+            <p>LinkedIn: https://www.linkedin.com/in/sandhya-d-aa04013a7</p>
+     
+          </div>
+
+    </div>
 </div>
 
-<!-- BUTTONS -->
-<nav>
-    <button onclick="show('contact')">Contact</button>
-    <button onclick="show('education')">Education</button>
-    <button onclick="show('internship')">Internship</button>
-    <button onclick="show('certificate')">Certificates</button>
-    <button onclick="show('company')">Company Details</button>
-</nav>
-
-<!-- SECTIONS -->
-<div id="contact" class="section">
-    <h2>📞 Contact</h2>
-    <p>Email: sandhya02183@gmail.com</p>
-    <p>Phone: +91  8618403429</p>
-    <p>GitHub: github.com/sandhya-9740</p>
-</div>
-
-<div id="education" class="section">
-    <h2>🎓 Education</h2>
-    <p>BCA –Bachelor of Computer Application </p>
-    <p>CGPA: 8.69</p>
-</div>
-
-<div id="internship" class="section">
-    <h2>💼 Internship</h2>
-    <p>Software Development Intern (AI & ML)</p>
-    <p>IMTDA INFOTECH PRIVATE LIMITED</p>
-</div>
-
-<div id="certificate" class="section">
-    <h2>🏆 Certificates</h2>
-    <ul>
-        <li>Python Programming</li>
-        <li>Machine Learning</li>
-        <li>AI Fundamentals</li>
-    </ul>
-</div>
-
-<div id="company" class="section">
-    <h2>🏢 Company</h2>
-    <p><strong>IMTDA INFOTECH PRIVATE LIMITED</strong></p>
-</div>
-
-<!-- FOOTER -->
 <footer>
-    Address: IMTDA INFOTECH PRIVATE LIMITED, Visakhapatanum, Andhra Pradesh, India
+    IMTDA Infotech Private Limited | Software Development & AI–ML Solutions
 </footer>
 
 <script>
 function show(id){
-    let sections=document.querySelectorAll('.section');
-    sections.forEach(sec=>sec.style.display="none");
-    document.getElementById(id).style.display="block";
+    document.querySelectorAll('.section').forEach(s=>{
+        s.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
 }
 </script>
 
