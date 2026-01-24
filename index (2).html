@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Navigation Buttons */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    nav button {
+      padding: 14px 30px;
+      border: none;
+      border-radius: 40px;
+      background: #00e6e6;
+      color: #000;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav button:hover {
+      background: #ffffff;
+      transform: scale(1.08);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      animation: fade 0.6s ease;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      color: #00ffff;
+      font-size: 2rem;
+    }
+
+    .card p, li {
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    ul { padding-left: 20px; }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.3);
+      font-size: 0.95rem;
+    }
+
+    footer span {
+      color: #00ffff;
+      font-weight: 600;
+    }
+  </style></head><body>  <!-- HEADER -->  <header>
+    <h1>Sandhya</h1>
+    <p>Software Developer | AI & ML Intern</p>
+  </header>  <!-- BUTTON MENU -->  <nav>
+    <button onclick="showSection('name')">Name</button>
+    <button onclick="showSection('internship')">Internship</button>
+    <button onclick="showSection('certificate')">Certificates</button>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>  <!-- NAME SECTION -->  <section id="name" class="active">
+    <div class="card">
+      <h2>Profile</h2>
+      <p><strong>Name:</strong> Sandhya</p>
+      <p><strong>Role:</strong> Software Developer Intern</p>
+      <p><strong>Skills:</strong> HTML, CSS, JavaScript, Python, AI & ML</p>
+      <p><strong>Objective:</strong> To build creative, efficient and user‑friendly applications.</p>
+    </div>
+  </section>  <!-- INTERNSHIP -->  <section id="internship">
+    <div class="card">
+      <h2>Internship</h2>
+      <p><strong>Company:</strong> IMTDA Infotech Private Limited</p>
+      <p><strong>Domain:</strong> Software Development using AI & ML</p>
+      <p><strong>Description:</strong></p>
+      <ul>
+        <li>Worked on real‑time development projects</li>
+        <li>Implemented machine learning concepts</li>
+        <li>Improved coding and problem‑solving skills</li>
+      </ul>
+    </div>
+  </section>  <!-- CERTIFICATES -->  <section id="certificate">
+    <div class="card">
+      <h2>Certificates</h2>
+      <ul>
+        <li>AI & Machine Learning Internship Certificate</li>
+        <li>Python Programming Certificate</li>
+        <li>Web Development Certificate</li>
+        <li>Data Science Fundamentals</li>
+      </ul>
+    </div>
+  </section>  <!-- EDUCATION -->  <section id="education">
+    <div class="card">
+      <h2>Education</h2>
+      <p><strong>Degree:</strong> Bachelor of Computer Application</p>
+      <p><strong>Branch:</strong> Computer Application</p>
+      <p><strong>CGPA:</strong> 8.69</p>
+      <p><strong>College:</strong> Indus valley degree college</p>
+      <p><strong>Year:</strong> 2023 – 2026</p>
+    </div>
+  </section>  <!-- CONTACT -->  <section id="contact">
+    <div class="card">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> sandhya02183@email.com</p>
+      <p><strong>Phone:</strong> +91 8618403429</p>
+      <p><strong>GitHub:</strong> github.com/sandhya-9740</p>
+      <p><strong>LinkedIn:</strong>https://www.linkedin.com/in/sandhya-d-aa04013a7</p>
+    </div>
+  </section>  <!-- FOOTER -->  <footer>
+    <p>Company Details</p>
+    <p><span>IMTDA Infotech Private Limited</span></p>
+    <p>Software Development | AI & ML Solutions</p>
+    <p>© 2026 Sandhya Portfolio</p>
+  </footer>  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script></body>
+</html>
